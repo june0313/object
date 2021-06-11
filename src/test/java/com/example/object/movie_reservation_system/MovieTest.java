@@ -23,5 +23,14 @@ class MovieTest {
         );
 
         assertNotNull(avater);
+
+        Movie starWars = new Movie(
+                "스타워즈",
+                Duration.ofMillis(210),
+                Money.wons(10_000),
+                new NoneDiscountPolicy()
+        );
+
+        assertTrue(starWars.getFee().isGreaterThanOrEqual(Money.wons(10_000)));
     }
 }
