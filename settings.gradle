@@ -1,2 +1,4 @@
 rootProject.name = 'object'
+include 'object-data-driven-design'
+include 'object-responsibility-driven-design'
 
