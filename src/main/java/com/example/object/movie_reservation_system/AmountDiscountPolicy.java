@@ -1,8 +1,6 @@
 package com.example.object.movie_reservation_system;
 
-import java.util.List;
-
-public class AmountDiscountPolicy extends DiscountPolicy {
+public class AmountDiscountPolicy extends DefaultDiscountPolicy {
     private final Money discountAmount;
 
     public AmountDiscountPolicy(Money discountAmount, DiscountCondition... conditions) {

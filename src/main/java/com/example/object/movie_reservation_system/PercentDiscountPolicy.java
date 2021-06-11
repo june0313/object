@@ -1,6 +1,6 @@
 package com.example.object.movie_reservation_system;
 
-public class PercentDiscountPolicy extends DiscountPolicy {
+public class PercentDiscountPolicy extends DefaultDiscountPolicy {
     private final double percent;
 
     public PercentDiscountPolicy(double percent, DiscountCondition... conditions) {

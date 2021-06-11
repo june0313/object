@@ -1,12 +1,8 @@
 package com.example.object.movie_reservation_system;
 
-public class NoneDiscountPolicy extends DiscountPolicy {
-    public NoneDiscountPolicy(DiscountCondition... conditions) {
-        super(conditions);
-    }
-
+public class NoneDiscountPolicy implements DiscountPolicy {
     @Override
-    protected Money getDiscountAmount(Screening screening) {
+    public Money calculateDiscountAmount(Screening screening) {
         return Money.ZERO;
     }
 }
