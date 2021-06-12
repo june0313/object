@@ -28,13 +28,13 @@ public class Movie {
             case PERCENT_DISCOUNT:
                 return calculatePercentDiscountAmount();
             case NONE_DISCOUNT:
-                return calculateNoneDiscoutnAmount();
+                return calculateNoneDiscountAmount();
         }
 
         throw new IllegalStateException();
     }
 
-    private Money calculateNoneDiscoutnAmount() {
+    private Money calculateNoneDiscountAmount() {
         return Money.ZERO;
     }
 
