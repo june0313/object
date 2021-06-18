@@ -5,23 +5,20 @@ import com.example.object.chapter5.Money;
 import java.util.ArrayList;
 import java.util.List;
 
-public abstract class Phone {
+public class Phone {
+    private RatePolicy ratePolicy;
     private List<Call> calls = new ArrayList<>();
-    private double taxRate;
 
-    public Phone(double taxRate) {
-        this.taxRate = taxRate;
+    public Phone(RatePolicy ratePolicy) {
+        this.ratePolicy = ratePolicy;
+    }
+
+    public List<Call> getCalls() {
+        return calls;
     }
 
     public Money calculateFee() {
-        Money result = Money.ZERO;
-
-        for (Call call : calls) {
-            result = result.plus(calculateCallFee(call));
-        }
-
-        return result.plus(result.times(taxRate));
+        return ratePolicy.calculateFee(this);
     }
 
-    abstract protected Money calculateCallFee(Call call);
 }
