@@ -1,6 +1,7 @@
 package com.example.object.movie_reservation_system;
 
 import java.time.Duration;
+import java.time.LocalDateTime;
 
 public class Movie {
     private final String title;
@@ -20,6 +21,10 @@ public class Movie {
     }
 
     public Money calculateMovieFee(Screening screening) {
+        if (screening == null || screening.getStartTime().isBefore(LocalDateTime.now())) {
+            throw new IllegalArgumentException();
+        }
+
         return fee.minus(discountPolicy.calculateDiscountAmount(screening));
     }
 }
